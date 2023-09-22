@@ -18,9 +18,9 @@ python main.py [-h][--method METHOD][--dataset DATASET]
 example: ```python main.py --method SSE_hierarchical --dataset wine --constraint_ratio 0.2```
 ```
 required arguments:
-  --method METHOD      running different components of SSE. choices are SSE_partitioning_pairwise, SSE_hierarchical, and so on.
-  --dataset DATASET    dataset to run. they should be stored in directory ./datasets.
-  --constraint_ratio   constraint ratio. suggest setting 0.2 for pairwise constraints and 0.1 for label constraints.
+  --method METHOD    running different components of SSE. Choices are SSE_partitioning_pairwise, SSE_hierarchical, and so on.
+  --dataset DATASET    dataset to run. They should be stored in directory ./datasets.
+  --constraint_ratio   constraint ratio. Suggest setting 0.2 for pairwise constraints and 0.1 for label constraints.
 ```
 ```
 optional arguments:
