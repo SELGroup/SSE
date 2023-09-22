@@ -11,7 +11,6 @@ from SSE_partitioning import FlatSSE
 import numpy as np
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-import h5py
 # from utils import PartitionTree
 from SSE_hierarchical import cal_dendrogram_purity
 import argparse

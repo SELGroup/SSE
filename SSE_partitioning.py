@@ -3,7 +3,6 @@ import heapq
 import numpy as np
 
 from SE_partitioning import Graph, Edge, read_graph, get_graph
-from graph_construction import knn_affinity
 
 EPS = 1e-15
 

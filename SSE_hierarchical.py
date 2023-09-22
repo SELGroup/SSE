@@ -3,8 +3,6 @@ import math
 import heapq
 import numba as nb
 import numpy as np
-import networkx as nx
-from ete3 import Tree
 from queue import Queue
 
 def get_id():
@@ -287,21 +285,6 @@ class PartitionTree_SSE():
                             e[0] = self.CompressDelta(nodes_dict[e[1]], nodes_dict[p_id], g_vol)
                 heapq.heapify(cmp_heap)
         return root, tree_node_copy
-
-    def coding_tree_2ete3(self, root, tree_node):
-        t = Tree()
-        root_ete = t.add_child(name=str(root))
-        q = Queue()
-        q.put((root, root_ete))
-        while q.qsize()>0:
-            node, node_ete = q.get()
-            if tree_node[node].children is None:
-                continue
-            for node_i in tree_node[node].children:
-                node_i_ete = node_ete.add_child(name=str(node_i))
-                q.put((node_i, node_i_ete))
-        # print(t)
-        return t
 
 
     def build_coding_tree(self, k=2, mode='v1'):
