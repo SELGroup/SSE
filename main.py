@@ -38,7 +38,7 @@ def SSE_pairwise_clustering(path):
     y = np.array(data_f['gnd']).astype(float).squeeze()
     n_instance = y.shape[0]
     n_cluster = np.unique(y).shape[0]
-    knn_k = knn_k_estimating(n_cluster, n_instance)
+    knn_k = knn_k_estimating(n_cluster, n_instance, args.knn_constant)
     A, A_dense = knn_affinity(X, args.sigmasq, knn_k)
     ARIs = []
     NMIs = []
@@ -60,7 +60,7 @@ def SSE_label_clustering(path):
     y = np.array(data_f['gnd']).astype(float).squeeze()
     n_instance = y.shape[0]
     n_cluster = np.unique(y).shape[0]
-    knn_k = knn_k_estimating(n_cluster, n_instance)
+    knn_k = knn_k_estimating(n_cluster, n_instance, args.knn_constant)
     A, A_dense = knn_affinity(X, args.sigmasq, knn_k)
     ARIs = []
     NMIs = []
@@ -129,7 +129,7 @@ def SSE_pairwise_clustering_bio(path):
     y = np.array(data_f['gnd']).astype(float).squeeze()
     n_instance = y.shape[0]
     n_cluster = np.unique(y).shape[0]
-    knn_k = knn_k_estimating(n_cluster, n_instance)
+    knn_k = knn_k_estimating(n_cluster, n_instance, args.knn_constant)
     A, A_dense = knn_cosine_sim(X, knn_k)
     ARIs = []
     NMIs = []
@@ -152,7 +152,7 @@ def SSE_label_clustering_bio(path):
     y = np.array(data_f['gnd']).astype(float).squeeze()
     n_instance = y.shape[0]
     n_cluster = np.unique(y).shape[0]
-    knn_k = knn_k_estimating(n_cluster, n_instance)
+    knn_k = knn_k_estimating(n_cluster, n_instance, args.knn_constant)
     A, A_dense = knn_cosine_sim(X, knn_k)
     ARIs = []
     NMIs = []
