@@ -1,7 +1,7 @@
 # SSE
-Semi-supervised clustering via structural entropy with different constraints.
+### Semi-supervised clustering via structural entropy with different constraints.
 ![image](framework.png)
-(I) Two graphs G and G' are constructed from input data and constraints, respectively. (II) Semi-supervised partitioning clustering is performed through two opertors merging and moving. (III) Semi-supervised hierarchical clustering is performed through two operators stretching and compressing.
+Overview of SSE. (I) Two graphs G and G' are constructed from input data and constraints, respectively. (II) Semi-supervised partitioning clustering is performed through two opertors merging and moving. (III) Semi-supervised hierarchical clustering is performed through two operators stretching and compressing.
 
 # Installation
 Install the required packages listed in the file ```requirement.txt```. The code is tested on Python 3.10.0.
