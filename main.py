@@ -6,7 +6,7 @@ from SSE_hierarchical import PartitionTree_SSE
 from queue import Queue
 
 import scipy
-from graph_construction import knn_affinity, knn_cosine_sim, generate_constraints_pairwise, generate_constraints_label
+from graph_construction import knn_affinity, knn_cosine_sim, generate_constraints_pairwise, generate_constraints_label, knn_k_estimating
 from SSE_partitioning import FlatSSE
 import numpy as np
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
@@ -29,9 +29,7 @@ parser.add_argument('--knn_constant', default=20, type=float)
 parser.add_argument('--hie_knn_k', default=5)
 args = parser.parse_args()
 
-def knn_k_estimating(n_cluster, n_instance, knn_constant=args.knn_constant):
-    knn_k = int(np.ceil(knn_constant * (n_instance/n_cluster) / (np.log2(n_instance) ** 2)))+1
-    return knn_k
+
 
 def SSE_pairwise_clustering(path):
     data_f = scipy.io.loadmat(path)

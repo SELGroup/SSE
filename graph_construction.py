@@ -239,6 +239,10 @@ def generate_constraints_label(y, N_PL, N_NL, A_dense):
                 mtx_con[i, j] = (A_dense_min - A_dense[i, j]) * (ml_counts / cl_counts)
     return mtx_con
 
+def knn_k_estimating(n_cluster, n_instance, knn_constant=args.knn_constant):
+    knn_k = int(np.ceil(knn_constant * (n_instance/n_cluster) / (np.log2(n_instance) ** 2)))+1
+    return knn_k
+
 
 
 
