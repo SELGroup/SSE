@@ -65,7 +65,7 @@ def SSE_label_clustering(path):
     ARIs = []
     NMIs = []
     for _ in range(args.exp_repeats):
-        A_constraints = generate_constraints_pairwise(y, int(A.shape[0] * args.constraint_ratio), int(A.shape[0] * args.constraint_ratio), A_dense)
+        A_constraints = generate_constraints_label(y, int(A.shape[0] * args.constraint_ratio), int(A.shape[0] * args.constraint_ratio), A_dense)
         flatSSE = FlatSSE(A, args.constraint_weight * A_constraints, len(np.unique(y)))
         y_pred_flatSSE = flatSSE.build_tree()
         ARI = adjusted_rand_score(y, y_pred_flatSSE)
